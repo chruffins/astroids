@@ -1,0 +1,1 @@
+/usr/bin/c++ -rdynamic CMakeFiles/asteroids.dir/main.cpp.o CMakeFiles/asteroids.dir/allegro/font.cpp.o CMakeFiles/asteroids.dir/allegro/music.cpp.o CMakeFiles/asteroids.dir/game/objects.cpp.o -o asteroids  -lallegro -lm -lallegro_primitives -lallegro_font -lallegro_audio -lallegro_acodec 
