@@ -1,3 +1,0 @@
-/home/chris/projects/asteroids-cpp/CMakeFiles/asteroids.dir
-/home/chris/projects/asteroids-cpp/CMakeFiles/edit_cache.dir
-/home/chris/projects/asteroids-cpp/CMakeFiles/rebuild_cache.dir
