@@ -20,9 +20,14 @@ namespace game {
 
         virtual void update(double dt) = 0;
         virtual void draw() = 0;
+
+        inline void set_position(float x, float y) {
+            this->x = x;
+            this->y = y;
+        }
     };
 
-    class asteroid : object {
+    class asteroid : public object {
     private:
         int sides;
     public:
@@ -33,7 +38,7 @@ namespace game {
         void draw() override;
     };
 
-    class character : object {
+    class character : public object {
     private:
         float tdx; // top dx
         float tdy; // top dy

@@ -18,7 +18,7 @@ namespace game {
         dx = 0;
         dy = 0;
         rotation = 0;
-        dr = 0;
+        dr = 1;
         this->sx = sx;
         this->sy = sx;
     }
@@ -38,10 +38,16 @@ namespace game {
     }
 
     void asteroid::draw() {
+        float r = sx / 2;
+
         for (int i = 0; i < this->sides; i++) {
-            al_draw_line(x + ((sx / 2) * sin((2 * M_PI / i) + rotation)), y + ((sy / 2) * cos((2 * M_PI / i) + rotation)), 
-                x + ((sx / 2) * sin(2 * M_PI / (i+1))), y + ((sy / 2) * cos(2 * M_PI / (i+1))), al_map_rgb(255,255,255), 2);
+            float a1 = rotation + (i * 2 * M_PI / sides);
+            float a2 = rotation + ((i + 1) * 2 * M_PI / sides);
+
+            al_draw_line(x + (r * cos(a1)), y + (r * sin(a1)), 
+                x + (r * cos(a2)), y + (r * sin(a2)), al_map_rgb(255,255,255), 2);
         }
+        al_draw_circle(x, y, r, al_map_rgb(255, 0, 0), 1);
     }
 
     character::character() : object() {

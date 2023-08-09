@@ -49,7 +49,8 @@ void run_game() {
     ALLEGRO_EVENT event;
 
     allegro::music intro_song = allegro::music("res/audio/gauze.ogg", "gauze");
-    game::asteroid test_obj = game::asteroid(32, 32, 3);
+    game::asteroid triangle = game::asteroid(32, 32, 3);
+    game::asteroid pentagon = game::asteroid(40, 40, 5);
 
     bool finished = false;
     bool redraw = false;
@@ -64,6 +65,7 @@ void run_game() {
     al_start_timer(timer);
 
     intro_song.play();
+    pentagon.set_position(500, 200);
 
     while (!finished) {
         al_wait_for_event(event_queue, &event);
@@ -82,9 +84,12 @@ void run_game() {
 
         if (redraw) {
             redraw = false;
+            triangle.update(1.0 / 60.0);
+            pentagon.update(1.0 / 60.0);
 
             al_clear_to_color(al_map_rgb(0,0,0));
-            test_obj.draw();
+            triangle.draw();
+            pentagon.draw();
             al_flip_display();
         }
     }

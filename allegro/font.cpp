@@ -57,6 +57,7 @@ namespace allegro {
         if (default_font_loaded) {
             return default_font;
         }
+        return NULL;
     }
 
     void font::load_default_font() {
