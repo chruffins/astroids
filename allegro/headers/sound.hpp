@@ -8,9 +8,10 @@ namespace allegro {
     private:
         ALLEGRO_SAMPLE *sample;
     public:
-        sound();
+        sound(const char *filename);
         ~sound();
 
         void play();
+        void play(float gain, float pan, float speed, ALLEGRO_PLAYMODE loop, ALLEGRO_SAMPLE_ID *ret_id);
     };
 }
