@@ -11,17 +11,24 @@ namespace allegro {
     private:
         ALLEGRO_AUDIO_STREAM *stream;
         std::string name;
-        float volume;
         float gain;
         float pan;
         ALLEGRO_PLAYMODE playmode;
     public:
         music(std::string, std::string);
-        music(std::string, std::string, float, float, float, ALLEGRO_PLAYMODE);
+        music(std::string, std::string, float, float, ALLEGRO_PLAYMODE);
         ~music();
 
         void play();
         void stop();
+
+        void set_gain(float);
+        void set_pan(float);
+        void set_playmode(ALLEGRO_PLAYMODE);
+
+        float get_gain();
+        float get_pan();
+        ALLEGRO_PLAYMODE get_playmode();
     };
 }
 
